@@ -17,7 +17,10 @@
                     <div class="panel-heading"><h4>Category: {{ pitch.category }}</h4></div>
                         <div class="panel-body">
                             <p> {{ pitch.title }}</p>
-                            <p>{{ pitch.content }} </p>
+                            <p>{{pitch.body}}</p>
+                            <p>{{ pitch.post }} </p>
+                            <li><a href="{{url_for('main.comment')}}">Comments here</a></li>
+
                             </div>
                         </div>
     
