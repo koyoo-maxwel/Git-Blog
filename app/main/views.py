@@ -99,7 +99,7 @@ def Business():
         db.session.add(Business)
         db.session.commit()
         return redirect(url_for('main.index'))
-    return render_template('Business.html')
+    return render_template('Business.html',form = form)
 
 
     
