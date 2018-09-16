@@ -89,6 +89,44 @@ class Comment(UserMixin,db.Model):
         db.session.add(self)
         db.session.commit()        
 
+
+
+
+
+
+
+
+/////////////////////////////////////////
+    <div class="jumbotron">
+        <H1 style="font-family: 'Cookie', cursive; text-align: center; color: #3A005C;">Whats on your mind........Impress
+            someone now.</H1>
+
+    </div>
+    <div class="container" style="background-color: rgb(235, 230, 160);">
+        <h3 style="text-align:center">Choose a category below and pitch or view pitches</h3>
+        <nav class="navbar navbar-default" role="navigation" style="text-align:center;">
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse" id="pro">
+                <ul class="nav navbar-nav">
+                    <li style="padding-right:150px; color:blue;"><a href="/pitch">Pick up</a></li>
+                    <li style="padding-right:150px; color:blue;"><a href="/product">Product</a></li>
+                    <li style="padding-right:150px; color:blue;"><a href="/interview">Interview</a></li>
+                    <li style="padding-right:150px; color:blue;"><a href="/promotion">Promotion</a></li>
+
+                </ul>
+            </div>
+        </nav>
+
+
+
+
+        .......................................................
+        <li style="padding-right:90px; color:blue;"><a href="/Business">Business</a></li>
+                    <li style="padding-right:90px; color:blue;"><a href="/Tech">Tech</a></li>
+                    <li style="padding-right:90px; color:blue;"><a href="/Health">Health</a></li>
+                    <li style="padding-right:90px; color:blue;"><a href="/promotion">health</a></li>
+
    
 
         
