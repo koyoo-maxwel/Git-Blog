@@ -4,7 +4,7 @@ from flask import render_template,redirect,url_for,abort,request
 from flask_login import login_required
 #from .forms import ReviewForm,UpdateProfile
 from .. import db,photos
-from .forms import PitchForm
+from .forms import PitchForm,CommentForm,BusinessForm
 from ..models import  User, Pitch , Comment
 from .forms import UpdateProfile
 
@@ -24,7 +24,7 @@ def index():
     title = 'pitch || pich it here'
     pitches = Pitch.query.all()
 
-    return render_template('index.html', title= title, pitches = pitches)
+    return render_template('index.html', title= title, pitches = pitches,)
 
 @main.route('/user/<uname>')
 @login_required
@@ -63,26 +63,13 @@ def MyPitch():
 @main.route('/comment',methods = ['GET','POST'])
 @login_required
 def comment():
-    '''
-    View root page function that returns the index page and its data
-    '''
-    title = 'pitch ||Comment'
-
-    return render_template('comment.html', title = title )
-
-
-
-@main.route('/pitch',methods = ['GET','POST'])
-@login_required
-def pitch():
-    '''
-    View root page function that returns the index page and its data
-    '''
-    title = 'pitch ||pitch'
-    return render_template('pitch.html', title = title )
-
-
-
+    form =CommentForm()
+    if form.validate_on_submit():
+        db.session.add(comment)
+        db.session.commit()
+        return redirect(url_for('main.index'))
+    return render_template('category.html')
+    
 
 @main.route('/user/<uname>/update',methods = ['GET','POST'])
 @login_required
@@ -102,6 +89,17 @@ def update_profile(uname):
         return redirect(url_for('.profile',uname=user.username))
 
     return render_template('profile/update.html',form =form)
+
+
+@main.route('/Business',methods = ['GET','POST'])
+@login_required
+def Business():
+    form =BusinessForm()
+    if form.validate_on_submit():
+        db.session.add(Business)
+        db.session.commit()
+        return redirect(url_for('main.index'))
+    return render_template('Business.html')
 
 
     
