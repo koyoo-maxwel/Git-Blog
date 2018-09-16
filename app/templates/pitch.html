@@ -4,10 +4,12 @@
 
 {{ super() }}
 <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
-
+<body style="background-color: #4D1B10">
 <div class="container">
-    {{ wtf.quick_form(form) }}
+  {{ wtf.quick_form(form) }}
 </div>
+
+</body>
 
 {% endblock %}
 
