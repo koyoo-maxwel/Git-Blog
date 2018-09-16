@@ -27,3 +27,18 @@ class BusinessForm(FlaskForm):
     post = StringField('Your name',validators=[Required()])
     body = TextAreaField('Pitch')
     submit = SubmitField('Pitch')
+
+
+
+class TechForm(FlaskForm):
+    post = StringField('Your name',validators=[Required()])
+    body = TextAreaField('Pitch')
+    submit = SubmitField('Pitch')
+    
+
+
+class HealthForm(FlaskForm):
+    post = StringField('Your name',validators=[Required()])
+    body = TextAreaField('Pitch')
+    submit = SubmitField('Pitch')
+    

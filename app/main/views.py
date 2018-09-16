@@ -4,7 +4,7 @@ from flask import render_template,redirect,url_for,abort,request
 from flask_login import login_required
 #from .forms import ReviewForm,UpdateProfile
 from .. import db,photos
-from .forms import PitchForm,CommentForm,BusinessForm
+from .forms import PitchForm,CommentForm,BusinessForm,HealthForm,TechForm
 from ..models import  User, Pitch , Comment
 from .forms import UpdateProfile
 
@@ -101,6 +101,28 @@ def Business():
         db.session.commit()
         return redirect(url_for('main.index'))
     return render_template('Business.html',form = form)
+
+
+@main.route('/Tech',methods = ['GET','POST'])
+@login_required
+def Tech():
+    form =TechForm()
+    if form.validate_on_submit():
+        db.session.add(Tech)
+        db.session.commit()
+        return redirect(url_for('main.index'))
+    return render_template('Tech.html',form = form)
+
+
+@main.route('/Health',methods = ['GET','POST'])
+@login_required
+def Health():
+    form =HealthForm()
+    if form.validate_on_submit():
+        db.session.add(Health)
+        db.session.commit()
+        return redirect(url_for('main.index'))
+    return render_template('Health.html',form = form)
 
 
     
