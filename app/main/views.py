@@ -16,7 +16,6 @@ app = Flask(__name__)
 
 # views
 @main.route("/")
-@login_required
 def index():
     '''
     title = "pitch || pitch it here"
@@ -45,6 +44,8 @@ def update_pic(uname):
         path = f'photos/{filename}'
         user.profile_pic_path = path
         db.session.commit()
+
+        return redirect(url_for('main.index'))
 
         
     return redirect(url_for('main.profile',uname=uname))  
