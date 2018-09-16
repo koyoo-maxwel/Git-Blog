@@ -1,54 +1,48 @@
-{% extends 'base.html'%}
 
-
-{%block content%}
+  {% extends 'base.html'%}
+  {% block content %}
 
 {{ super() }}
 <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-    <div class="hovereffect">
-      <img class="img-responsive" src="https://www.w3schools.com/w3css/img_lights.jpgg" alt="">
-        <div class="overlay">
-                <h3>Political</h3>
-				<p>
-					<a href="#">LINK HERE</a>
-				</p>
-            </div>
+        <div class="hovereffect">
+            <img class="img-responsive" src="https://s3.studentvip.com.au/events/30549-large.png" alt="">
+                <div class="overlay">
+                    <h2 style="color:red;">Business</h2>
+                    <p>
+                        <a href="/Business">Read More...</a></li>
+                    </p>
+                </div>
+        </div>
     </div>
-</div>
-<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-    <div class="hovereffect">
-        <img class="img-responsive" src="https://www.w3schools.com/w3css/img_lights.jpg" alt="">
-            <div class="overlay">
-                <h2>Effect 12</h2>
-				<p>
-					<a href="#">LINK HERE</a>
-				</p>
+
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="hovereffect">
+                <img class="img-responsive" src="https://irishtechnews.ie/wp-content/uploads/2018/06/imgMoneyConfPitch-400x300.jpg" alt="">
+                    <div class="overlay">
+                        <h2 style="color:red;">Tech</h2>
+                        <p>
+                            <a href="/Tech">Read More...</a></li>
+                        </p>
+                    </div>
             </div>
-    </div>
-</div>
-<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-    <div class="hovereffect">
-        <img class="img-responsive" src="https://www.w3schools.com/w3css/img_lights.jpg" alt="">
-            <div class="overlay">
-                <h2>Effect 12</h2>
-				<p>
-					<a href="#">LINK HERE</a>
-				</p>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="hovereffect">
+                    <img class="img-responsive" src="https://etimg.etb2bimg.com/photo/52086196.cms" alt="">
+                        <div class="overlay">
+                            <h2 style="color:red;">Health</h2>
+                            <p>
+                                <a href="/Health">Read More...</a></li>
+                            </p>
+                        </div>
+                </div>
             </div>
-    </div>
-</div>
-<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-    <div class="hovereffect">
-        <img class="img-responsive" src="https://www.w3schools.com/w3css/img_lights.jpg" alt="">
-            <div class="overlay">
-                <h2>Effect 12</h2>
-				<p>
-					<a href="#">LINK HERE</a>
-				</p>
-            </div>
-    </div>
-</div>
+            
+
+{% endblock %}
 
 
-{% endblock%}
+
+
