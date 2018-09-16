@@ -18,6 +18,12 @@ class PitchForm(FlaskForm):
 
 class CommentForm(FlaskForm):
 
-    title = StringField('Comment title',validators=[Required()])
+    post = StringField('Comment title',validators=[Required()])
     comment = TextAreaField('comment', validators=[Required()])
     submit = SubmitField('Submit')
+
+
+class BusinessForm(FlaskForm):
+    post = StringField('Your name',validators=[Required()])
+    body = TextAreaField('Pitch')
+    submit = SubmitField('Pitch')
