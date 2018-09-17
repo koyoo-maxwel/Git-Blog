@@ -12,13 +12,14 @@ class Config:
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
     SENDER_EMAIL = 'koyoomaxwel@gmail.com'
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://student:1209@localhost/blog'
+    #SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://student:1209@localhost/blog'
 
 
    
 
 class ProdConfig(Config):
-    SQLALCHEMY_DATABASE_URI = os.environ.get("HEROKU_POSTGRESQL_BROWN_URL")
+    #SQLALCHEMY_DATABASE_URI = os.environ.get("HEROKU_POSTGRESQL_BROWN_URL")
+    SQLALCHEMY_DATABASE_URI = os.environ.get("HEROKU_POSTGRESQL_MAROON_URL")
     pass
 
 class TestConfig(Config):
