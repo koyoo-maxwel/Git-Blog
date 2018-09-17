@@ -15,7 +15,7 @@
     <!--my fonts-->
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     </head>
-    <body style="background-color:#4D1B10">
+    <body style="background-color:darkslategrey">
        
     <div class="row">
         <div class="col-md-4">
@@ -35,6 +35,27 @@
 
                             </div>
                         </div>
+                        <div class="col-md-6">
+                          
+                            
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading"><h4>Category: {{ blog.category }}</h4></div>
+                                            <div class="panel-body">
+                                                <p style="color:red" >{{ blog.post }}</p>
+                                                <p> {{ blog.title }}</p>
+                                                <p>{{blog.body}}</p>
+                                                
+                                                <p><a href="{{url_for('main.comment')}}">Rate it</a>
+                                                <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
+                                                </p>
+                    
+                    
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                            </div>
     
          {% endfor %}
         </div>
