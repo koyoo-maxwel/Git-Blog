@@ -18,20 +18,20 @@ class Config:
    
 
 class ProdConfig(Config):
-
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    SQLALCHEMY_DATABASE_URI = os.environ.get("HEROKU_POSTGRESQL_BROWN_URL")
+    pass
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://student:1209@localhost/pitch01'
+    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://student:1209@localhost/pitch01'
+    pass
 
 class DevConfig(Config):
-
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://student:1209@localhost/pitch01'
+    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://student:1209@localhost/pitch01'
 
     DEBUG = True
 
 config_options = {
 'development':DevConfig,
 'production':ProdConfig,
-'test':TestConfig
+#'test':TestConfig
 }    
