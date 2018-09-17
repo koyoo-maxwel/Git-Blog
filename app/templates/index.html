@@ -19,14 +19,14 @@
        
     <div class="row">
         <div class="col-md-4">
-        {% for pitch in pitches %}
+        {% for blog in blogs %}
         
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h4>Category: {{ pitch.category }}</h4></div>
+                    <div class="panel-heading"><h4>Category: {{ blog.category }}</h4></div>
                         <div class="panel-body">
-                            <p style="color:red" >{{ pitch.post }}</p>
-                            <p> {{ pitch.title }}</p>
-                            <p>{{pitch.body}}</p>
+                            <p style="color:red" >{{ blog.post }}</p>
+                            <p> {{ blog.title }}</p>
+                            <p>{{blog.body}}</p>
                             
                             <p><a href="{{url_for('main.comment')}}">Rate it</a>
                             <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>

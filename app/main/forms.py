@@ -9,12 +9,12 @@ class UpdateProfile(FlaskForm):
     submit = SubmitField('Submit')
 
 
-class PitchForm(FlaskForm):
-    post = StringField('Your name',validators=[Required()])
-    body = TextAreaField('Pitch')
-    category = SelectField('category', choices=[('choose', 'choose'),('business', 'business pitch'),('Tech Pitch', 'Tech Pitch'),
-    ('Health Pitch', 'Health Pitch')])
-    submit = SubmitField('Pitch')
+class BlogForm(FlaskForm):
+    blog = StringField('Your name',validators=[Required()])
+    body = TextAreaField('blog')
+    category = SelectField('category', choices=[('choose', 'choose'),('business', 'business blog'),('Tech blog', 'Tech blog'),
+    ('Health blog', 'Health blog')])
+    submit = SubmitField('blog')
 
 class CommentForm(FlaskForm):
 
@@ -25,20 +25,20 @@ class CommentForm(FlaskForm):
 
 class BusinessForm(FlaskForm):
     post = StringField('Your name',validators=[Required()])
-    body = TextAreaField('Pitch')
-    submit = SubmitField('Pitch')
+    body = TextAreaField('blog')
+    submit = SubmitField('blog')
 
 
 
 class TechForm(FlaskForm):
     post = StringField('Your name',validators=[Required()])
-    body = TextAreaField('Pitch')
-    submit = SubmitField('Pitch')
+    body = TextAreaField('blog')
+    submit = SubmitField('blog')
     
 
 
 class HealthForm(FlaskForm):
     post = StringField('Your name',validators=[Required()])
-    body = TextAreaField('Pitch')
-    submit = SubmitField('Pitch')
+    body = TextAreaField('blog')
+    submit = SubmitField('blog')
     

@@ -4,26 +4,26 @@ from flask import render_template,redirect,url_for,abort,request
 from flask_login import login_required
 #from .forms import ReviewForm,UpdateProfile
 from .. import db,photos
-from .forms import PitchForm,CommentForm,BusinessForm,HealthForm,TechForm
-from ..models import  User, Pitch , Comment
+from .forms import BlogForm,CommentForm,BusinessForm,HealthForm,TechForm
+from ..models import  User, Blog , Comment
 from .forms import UpdateProfile
 
 
 
 
-app = Flask(__name__)
+
 
 
 # views
 @main.route("/")
 def index():
     '''
-    title = "pitch || pitch it here"
+    title = "blog || blog it here"
     '''
-    title = 'pitch || pich it here'
-    pitches = Pitch.query.all()
+    title = 'blog || pich it here'
+    blogs = Blog.query.all()
 
-    return render_template('index.html', title= title, pitches = pitches,)
+    return render_template('index.html', title= title, blogs = blogs,)
 
 @main.route('/user/<uname>')
 @login_required
@@ -50,15 +50,15 @@ def update_pic(uname):
         
     return redirect(url_for('main.profile',uname=uname))  
 
-@main.route('/Pitch',methods = ['GET','POST'])
+@main.route('/blog',methods = ['GET','POST'])
 @login_required
-def MyPitch():
-    form =PitchForm()
+def MyBlog():
+    form =BlogForm()
     if form.validate_on_submit():
-        pitch = Pitch(post=form.post.data,body=form.body.data,category=form.category.data)
-        pitch.save_pitch()
+        blog = Blog(blog=form.blog.data,body=form.body.data,category=form.category.data)
+        blog.save_blog()
         return redirect(url_for('main.index'))
-    return render_template('pitch.html', form=form)
+    return render_template('blog.html', form=form)
 
 
 @main.route('/comment',methods = ['GET','POST'])
